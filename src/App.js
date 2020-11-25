@@ -6,6 +6,7 @@ import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
+import Spinner from './components/UI/Spinner/Spinner';
 
 // Main Component
 
@@ -52,7 +53,7 @@ const app = props => {
   return (
     <div>
       <Layout>
-        <Suspense fallback={<p>Loading...</p>}>{routes}</Suspense>
+        <Suspense fallback={<Spinner />}>{routes}</Suspense>
       </Layout>
     </div>
   );
