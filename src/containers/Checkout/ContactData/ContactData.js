@@ -107,7 +107,8 @@ const contactData = props => {
       ingredients: props.ings,
       price: props.price,
       orderData: formData,
-      userId: props.userId
+      userId: props.userId,
+      date: new Date()
     };
 
     props.onOrderBurger(order, props.token);
@@ -156,7 +157,7 @@ const contactData = props => {
         />
       ))}
       <Button btnType="Success" disabled={!formIsValid}>
-        ORDER
+        {formIsValid ? 'ORDER' : null}
       </Button>
     </form>
   );
